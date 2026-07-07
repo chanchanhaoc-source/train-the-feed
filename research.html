@@ -78,6 +78,10 @@
   .arrow{display:none!important}
 }
 </style>
+
+<style>
+.evidence{margin-top:34px;border:1px solid #303030;background:#0b0b0b;padding:clamp(24px,4vw,38px)}.evidenceIntro{display:grid;grid-template-columns:.7fr 1.3fr;gap:6vw;align-items:end;padding-bottom:24px;border-bottom:1px solid #303030}.evidenceIntro h3{font:500 clamp(30px,4vw,46px)/1 Georgia,serif;letter-spacing:-.035em;margin:8px 0 0}.evidenceGrid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #303030;border-top:1px solid #303030;margin-top:28px}.evidenceGrid article{min-height:360px;padding:24px;border-right:1px solid #303030;border-bottom:1px solid #303030;background:#090909}.evidenceGrid small{display:block;color:#777;text-transform:uppercase;letter-spacing:.13em;font-size:9px;margin-bottom:28px}.evidenceGrid h4{font:500 27px Georgia,serif;margin:0 0 16px}.evidenceGrid p{color:#aaa;margin:0 0 14px}.evidenceNote{color:#d5d5d1!important}.evidenceLinks,.referenceTags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.evidenceLinks a,.referenceTags span{color:#eee;text-decoration:none;border:1px solid #3a3a3a;border-radius:999px;padding:7px 10px;font-size:10px}.evidenceLinks a:hover{border-color:#aaa}@media(max-width:850px){.evidenceIntro{grid-template-columns:1fr;gap:10px}.evidenceGrid{grid-template-columns:1fr}.evidenceGrid article{min-height:auto}.evidence{margin-top:24px;padding:22px 18px}}
+</style>
 </head>
 <body>
 <div class="shell">
@@ -135,7 +139,7 @@
 <blockquote>How can an interactive learning experience help users recognize the connection between their short-video behavior, algorithmic recommendations, and consumer influence?</blockquote>
 <div class="goalSupport">
 <p>I wanted to understand how college students experience short-video recommendation systems and whether they notice how their own actions shape the feed over time.</p>
-<p>This project began as a course-based concept. After the semester ended, I independently synthesized the research, redesigned the experience flow, built the prototype, and developed the portfolio case study.</p>
+<p>This project began as a course-based concept. After the semester ended, I independently rebuilt the project website and prototype, using the original research direction as the foundation.</p>
 </div>
 </div>
 </section>
@@ -145,23 +149,23 @@
 <div class="eyebrow">02 · Research methods</div>
 <h2>Research Methods</h2>
 </div>
-<p>I used three research inputs to define the learning problem and guide the design direction.</p>
+<p>I used three inputs to define the learning problem and turn it into design decisions.</p>
 </div>
 <div class="methods">
 <article class="method reveal">
 <div class="methodNum">01</div>
 <h3>Expert Interview</h3>
-<p>Clarified how behavioral signals—likes, skips, watch time, saves, and repeated engagement—shape future content.</p>
+<p>Clarified how short-video platforms sustain engagement, blend persuasive content into everyday feeds, and make algorithmic influence difficult to see.</p>
 <div class="tags">
-<span class="tag">Behavioral signals</span>
-<span class="tag">Repeated exposure</span>
-<span class="tag">Recommendation logic</span>
+<span class="tag">Media influence</span>
+<span class="tag">Black-box systems</span>
+<span class="tag">Persuasive content</span>
 </div>
 </article>
 <article class="method reveal">
 <div class="methodNum">02</div>
 <h3>Student Interviews</h3>
-<p>Revealed how college students describe scrolling habits, personalization, product exposure, and impulse purchases.</p>
+<p>Surfaced how students describe scrolling habits, personalization, repeated product exposure, and impulse purchases.</p>
 <div class="tags">
 <span class="tag">Scrolling habits</span>
 <span class="tag">Personalization</span>
@@ -171,13 +175,51 @@
 <article class="method reveal">
 <div class="methodNum">03</div>
 <h3>Secondary Research</h3>
-<p>Supported the framing around algorithmic personalization, persuasive content, digital literacy, and learning design.</p>
+<p>Grounded the project in algorithm awareness, persuasive content, digital literacy, and learning design.</p>
 <div class="tags">
 <span class="tag">Digital literacy</span>
 <span class="tag">Influencer content</span>
 <span class="tag">Learning design</span>
 </div>
 </article>
+</div>
+<div class="evidence reveal">
+<div class="evidenceIntro">
+<div class="eyebrow">Evidence behind the synthesis</div>
+<h3>Sources behind the synthesis</h3>
+</div>
+<div class="evidenceGrid">
+<article>
+<small>Expert interview</small>
+<h4>Gavin Halm</h4>
+<p>Lecturer in the UC San Diego Department of Communication. His feedback helped frame the project through media, communication, and digital-platform studies.</p>
+<p class="evidenceNote">Key takeaway: awareness of algorithms does not always translate into critical understanding of how persuasive content enters the feed.</p>
+<div class="evidenceLinks">
+<a href="https://communication.ucsd.edu/people/lecturers/halm-gavin.html" target="_blank" rel="noreferrer">UCSD profile</a>
+</div>
+</article>
+<article>
+<small>Student interviews</small>
+<h4>Frequent short-video users</h4>
+<p>Student interviews were used as learner research to understand scrolling habits, algorithm awareness, repeated product exposure, and impulse-purchase moments.</p>
+<p class="evidenceNote">Interview notes were grouped into patterns and translated into learner needs, persona details, and design implications.</p>
+</article>
+<article>
+<small>Secondary research</small>
+<h4>Research areas and frameworks reviewed</h4>
+<p>The synthesis drew from recommendation systems, algorithm awareness, digital media literacy, influencer marketing, persuasive content, consumer behavior, and impulse buying.</p>
+<p class="evidenceNote">Learning-design decisions were informed by Bloom, Fink, Kolb, Mayer, Bates, Plass et al., and Dirksen.</p>
+<div class="referenceTags">
+<span>Bloom</span>
+<span>Fink</span>
+<span>Kolb</span>
+<span>Mayer</span>
+<span>Bates</span>
+<span>Plass et al.</span>
+<span>Dirksen</span>
+</div>
+</article>
+</div>
 </div>
 </section>
 <section class="section">
@@ -186,7 +228,7 @@
 <div class="eyebrow">03 · Key findings</div>
 <h2>Key Findings</h2>
 </div>
-<p>The research revealed three awareness gaps that shaped the final prototype direction.</p>
+<p>The research pointed to three gaps that shaped the prototype.</p>
 </div>
 <div class="findings">
 <article class="finding reveal">
@@ -230,7 +272,7 @@
 <div class="eyebrow">04 · Design implications</div>
 <h2>From Research to Design</h2>
 </div>
-<p>Research did not stay as research. Each finding became a concrete decision in the prototype.</p>
+<p>Each finding was translated into a prototype decision.</p>
 </div>
 <div class="bridge">
 <div class="bridgeRow reveal">
@@ -296,7 +338,7 @@
 <div class="eyebrow">05 · Audience</div>
 <h2>Target Learner</h2>
 </div>
-<p>A representative learner synthesized from interview patterns and the project’s learning context.</p>
+<p>A learner profile synthesized from interview patterns and the project context.</p>
 </div>
 <article class="persona reveal">
 <div class="personaIntro">
@@ -340,7 +382,7 @@
 <div>
 <div class="eyebrow">Research direction</div>
 <h2>Make the feedback loop visible.</h2>
-<p>The research led to a design direction focused on action, pattern recognition, and reflection through an interactive short-video simulation.</p>
+<p>The research led to a simulation built around action, pattern recognition, and reflection.</p>
 </div>
 <div>
 <a class="button" href="design.html">Next: Design Process <span>→</span>
