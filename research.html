@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research — Train the Feed</title>
+<style>
+:root{--bg:#070707;--panel:#0d0d0d;--ink:#efefed;--muted:#999;--line:#303030;--signal:#d3ded6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Arial,sans-serif}.shell{width:min(1240px,calc(100% - 48px));margin:auto}.nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:18px}.nav a{color:var(--ink);text-decoration:none;border:1px solid #393939;border-radius:999px;padding:10px 17px;font-size:13px;background:#090909;transition:.25s}.nav a:hover,.nav a.active{border-color:#aaa;background:#181818;transform:translateY(-2px)}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8f9691}.hero{min-height:calc(100svh - 92px);display:grid;grid-template-columns:1.15fr .85fr;gap:9vw;align-items:center;padding:8vh 0 10vh}.hero h1{font:500 clamp(82px,12vw,166px)/.8 Georgia,serif;letter-spacing:-.068em;margin:18px 0 35px}.hero p{max-width:710px;color:#c5c5c1;font-size:clamp(17px,2vw,23px)}.chips,.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}.chip,.tag{border:1px solid #3a3a3a;border-radius:999px;padding:8px 12px;color:#aaa;font-size:11px}.loop{border:1px solid var(--line);background:#0b0b0b;padding:28px;position:relative}.loop:before{content:'';position:absolute;inset:-1px;background:linear-gradient(130deg,#d3ded62b,transparent 35%);pointer-events:none}.loopTitle{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.14em;color:#888}.loopSteps{display:grid;margin-top:22px}.loopStep{display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:14px;padding:19px 0;border-bottom:1px solid #292929}.loopStep:last-child{border:0}.loopStep b{font:500 20px Georgia,serif}.loopStep i{font-style:normal;color:#777}.loopReturn{margin-top:18px;color:var(--signal);font-size:11px;text-align:right}.section{padding:105px 0;border-top:1px solid var(--line)}.sectionHead{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;margin-bottom:45px}.section h2{font:500 clamp(44px,6vw,78px)/.96 Georgia,serif;letter-spacing:-.048em;margin:12px 0}.sectionHead p{color:var(--muted);font-size:16px;max-width:600px;align-self:end}.goal{padding:clamp(28px,5vw,62px);border:1px solid #3a3a3a;background:#0c0c0c;transition:.35s}.goal:hover{border-color:#6d776f;box-shadow:0 0 50px #cce7d00b}.goal blockquote{font:500 clamp(34px,5vw,63px)/1.05 Georgia,serif;letter-spacing:-.04em;margin:18px 0 38px;max-width:1080px}.goalSupport{display:grid;grid-template-columns:1fr 1fr;gap:60px;border-top:1px solid #333;padding-top:25px}.goalSupport p{color:#aaa;margin:0}.methods{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.method{min-height:390px;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0b0b;display:flex;flex-direction:column;transition:transform .35s,border-color .35s,background .35s}.method:hover{transform:translateY(-6px);background:#101010;border-color:#5d665f}.methodNum{font:500 36px Georgia,serif;color:#666}.method h3{font:500 29px Georgia,serif;margin:42px 0 15px}.method p{color:#aaa}.method .tags{margin-top:auto}.tag{padding:6px 9px;font-size:10px}.findings{display:grid;gap:18px}.finding{display:grid;grid-template-columns:100px 1.1fr .9fr;gap:35px;padding:35px 38px;border:1px solid var(--line);border-left:2px solid var(--signal);background:#0b0b0b;transition:.35s}.finding:hover{border-color:#555;border-left-color:#fff;transform:translateX(5px)}.findingNum{font:500 42px Georgia,serif;color:#666}.finding h3{font:500 clamp(27px,3vw,38px)/1.06 Georgia,serif;margin:0 0 17px}.finding p{color:#aaa;margin:0}.why{border-left:1px solid #333;padding-left:28px}.why small{color:var(--signal);text-transform:uppercase;letter-spacing:.12em}.why p{margin-top:12px;color:#ddd}.bridge{display:grid;gap:10px}.bridgeRow{display:grid;grid-template-columns:1fr 56px 1fr;align-items:stretch;border-top:1px solid #303030;border-bottom:1px solid #303030;transition:.3s}.bridgeRow:hover{background:#0e0e0e;border-color:#555}.bridgeCell{padding:24px}.bridgeCell small{display:block;color:#777;letter-spacing:.11em;text-transform:uppercase;margin-bottom:8px}.bridgeCell b{font:500 21px/1.25 Georgia,serif}.arrow{display:grid;place-items:center;border-left:1px solid #303030;border-right:1px solid #303030;color:var(--signal);font-size:20px;transition:transform .3s}.bridgeRow:hover .arrow{transform:translateX(5px)}.persona{border:1px solid var(--line);background:#0b0b0b;padding:clamp(28px,5vw,58px);display:grid;grid-template-columns:.85fr 1.15fr;gap:7vw}.personaIntro{border-right:1px solid #333;padding-right:6vw}.avatar{width:72px;height:72px;border:1px solid #555;border-radius:50%;display:grid;place-items:center;font:500 28px Georgia,serif;margin-bottom:28px}.persona h3{font:500 clamp(42px,5vw,68px)/1 Georgia,serif;margin:8px 0}.personaIntro>small{color:#aaa}.persona p{color:#aaa}.personaDetails{display:grid;grid-template-columns:1fr 1fr;gap:40px}.detail h4{font:500 25px Georgia,serif;margin:0 0 18px}.detail ul{padding:0;margin:0;list-style:none}.detail li{color:#aaa;padding:11px 0 11px 18px;border-top:1px solid #292929;position:relative}.detail li:before{content:'—';position:absolute;left:0;color:#666}.cta{margin:105px 0 130px;padding:clamp(30px,6vw,72px);border:1px solid #3d3d3d;background:#0b0b0b;display:grid;grid-template-columns:1.2fr .8fr;gap:7vw;align-items:end}.cta h2{font:500 clamp(44px,7vw,90px)/.92 Georgia,serif;letter-spacing:-.05em;margin:13px 0 22px}.cta p{color:#aaa;max-width:680px;font-size:16px}.button{display:inline-flex;justify-content:space-between;gap:25px;background:#eee;color:#080808;text-decoration:none;padding:15px 18px;font-weight:700;transition:.3s}.button span{transition:.3s}.button:hover span{transform:translateX(5px)}.revealReady .reveal{opacity:0;transform:translate3d(0,20px,0);transition:opacity .62s ease,transform .75s cubic-bezier(.2,.8,.2,1)}.revealReady .reveal.visible{opacity:1;transform:none}.methods .reveal:nth-child(2){transition-delay:.07s}.methods .reveal:nth-child(3){transition-delay:.14s}@media(max-width:950px){.hero{grid-template-columns:1fr}.loop{max-width:650px}.sectionHead{grid-template-columns:1fr}.methods{grid-template-columns:1fr 1fr}.finding{grid-template-columns:75px 1fr}.why{grid-column:2}.persona{grid-template-columns:1fr}.personaIntro{border-right:0;border-bottom:1px solid #333;padding:0 0 35px}.cta{grid-template-columns:1fr}}@media(max-width:650px){.shell{width:calc(100% - 28px)}.nav{height:76px;overflow-x:auto;justify-content:flex-start}.nav a{white-space:nowrap;padding:8px 13px;font-size:11px}.hero{padding:75px 0}.hero h1{font-size:78px}.methods{grid-template-columns:1fr}.method{min-height:330px}.goalSupport,.personaDetails{grid-template-columns:1fr;gap:25px}.finding{grid-template-columns:1fr;padding:26px 22px}.why{grid-column:auto;border-left:0;border-top:1px solid #333;padding:20px 0 0}.bridgeRow{grid-template-columns:1fr}.arrow{height:44px;border:0;border-top:1px solid #303030;border-bottom:1px solid #303030;transform:rotate(90deg)}.bridgeRow:hover .arrow{transform:rotate(90deg) translateX(4px)}.cta{margin-top:70px}.section{padding:75px 0}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+<style>.avatar{width:72px;height:72px;border-radius:50%;overflow:hidden;background:#f2f2f2;margin-bottom:28px}.avatar img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}</style>
+<style>
+.shell{width:min(1320px,calc(100% - 48px))}.eyebrow{font-size:11px;letter-spacing:.15em;color:#d4d4d1}.hero{min-height:100svh;padding:20px 0 80px}.hero>div,.hero>aside{position:relative;top:-8vh}.hero h1{max-width:1050px;font:500 clamp(64px,10vw,128px)/.92 Georgia,serif;letter-spacing:-.06em;margin:15px 0 20px}.hero>div>p{max-width:640px;font-size:18px;color:#b8bbc4}.loop{border:1px solid #303030;background:#0b0b0b;padding:28px}.loopTitle{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #303030;font-size:10px;letter-spacing:.14em;text-transform:none;color:#888}.loopStep{grid-template-columns:36px 1fr auto;gap:14px;padding:19px 0}.loopStep b{font:500 20px Georgia,serif}@media(max-width:650px){.hero{min-height:100svh;padding:40px 0 80px}.hero>div,.hero>aside{top:-5vh}.hero h1{font-size:58px}.hero>div>p{font-size:18px}}
+</style>
+<style>.loopStep{transition:background .25s,padding .25s}.loopStep span{transition:transform .25s}.loopStep:hover{background:#101010;padding-left:8px;padding-right:8px}.loopStep:hover span{transform:translateY(4px)}.loopStep:last-child:hover span{transform:rotate(90deg)}</style>
+<style>.hero{grid-template-columns:1.08fr .92fr}.loop{border:1px solid #303030;background:#0b0b0b;padding:28px;position:relative}.loop:before{display:none}.loopSteps{margin-top:22px}.loopStep span{color:var(--signal)}@media(max-width:950px){.hero{grid-template-columns:1fr}}</style>
+<style>.siteFooter{padding:28px 0 36px;border-top:1px solid #303030;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;color:#777;font-size:11px;line-height:1.6}.siteFooter b{display:block;color:#aaa;font-weight:500;margin-bottom:3px}.siteFooter div:last-child{text-align:right}@media(max-width:650px){.siteFooter{grid-template-columns:1fr;gap:14px}.siteFooter div:last-child{text-align:left}}</style>
+
+<style>
+@media(max-width:650px){
+  main{padding-bottom:70px}
+  .section{padding:56px 0!important}
+  .sectionHead{gap:18px!important;margin-bottom:28px!important}
+  .section h2{font-size:clamp(36px,12vw,52px)!important}
+  .hero{min-height:86svh!important}
+  .hero h1{font-size:58px!important}
+  .cta,.nextPage{margin:64px 0 82px!important;padding:30px 22px!important}
+  .cta h2,.nextPage h2{font-size:44px!important}
+  .button{width:auto;min-width:190px;justify-content:space-between}
+}
+</style>
+
+<style>
+@media(max-width:650px){
+  .bridge{gap:16px}
+  .bridgeRow{display:grid!important;grid-template-columns:1fr!important;border:1px solid #303030!important;background:#0b0b0b;padding:0;overflow:hidden}
+  .bridgeRow:hover{transform:none;background:#0b0b0b}
+  .bridgeCell{padding:20px 18px!important}
+  .bridgeCell small{font-size:9px;color:#8f9691}
+  .bridgeCell b{font-size:20px;line-height:1.25}
+  .arrow{height:auto!important;display:block!important;border:0!important;border-top:1px solid #303030!important;border-bottom:1px solid #303030!important;transform:none!important;padding:10px 18px;color:#8f9691;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:#080808}
+  .arrow::before{content:'translates into';}
+  .arrow{font-size:0}
+  .bridgeRow:hover .arrow{transform:none!important}
+}
+</style>
+
+<style>
+@media(max-width:650px){
+  .bridge{gap:18px}
+  .bridgeRow{position:relative;display:grid!important;grid-template-columns:1fr!important;border:1px solid #303030!important;background:#0b0b0b!important;padding:0!important;overflow:hidden}
+  .bridgeRow::before{content:'Research insight  →  Design decision';display:block;padding:12px 16px;border-bottom:1px solid #303030;color:#8f9691;font-size:9px;letter-spacing:.16em;text-transform:uppercase;background:#080808}
+  .bridgeCell{padding:18px 16px!important}
+  .bridgeCell:first-child{border-bottom:1px solid #242424}
+  .bridgeCell:last-child{background:#101010}
+  .bridgeCell small{font-size:9px!important;letter-spacing:.14em;color:#777!important;margin-bottom:7px!important}
+  .bridgeCell:first-child small::after{content:' / problem signal'}
+  .bridgeCell:last-child small::after{content:' / prototype move'}
+  .bridgeCell b{display:block;font-size:20px!important;line-height:1.22!important}
+  .arrow{display:none!important}
+}
+</style>
+
+<style>
+@media(max-width:650px){
+  .bridge{gap:0;border-top:1px solid #303030;border-bottom:1px solid #303030}
+  .bridgeRow{display:grid!important;grid-template-columns:44px 1fr!important;gap:0;border:0!important;border-bottom:1px solid #303030!important;background:transparent!important;padding:0!important;overflow:visible}
+  .bridgeRow:last-child{border-bottom:0!important}
+  .bridgeRow::before{content:counter(bridge, decimal-leading-zero);counter-increment:bridge;display:grid;place-items:start center;padding-top:20px;border:0!important;background:transparent!important;color:#666;font:500 22px Georgia,serif;letter-spacing:0;text-transform:none}
+  .bridge{counter-reset:bridge}
+  .bridgeCell{padding:17px 0 17px 4px!important;border:0!important;background:transparent!important}
+  .bridgeCell:first-child{padding-bottom:4px!important}
+  .bridgeCell:last-child{grid-column:2;padding-top:0!important}
+  .bridgeCell small{display:none!important}
+  .bridgeCell b{display:block;font-size:19px!important;line-height:1.18!important}
+  .bridgeCell:first-child b{color:#efefed}
+  .bridgeCell:last-child b{font:500 13px/1.35 Arial,sans-serif!important;color:#999!important}
+  .bridgeCell:last-child b::before{content:'→ ';color:#d3ded6}
+  .arrow{display:none!important}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="nav" aria-label="Case study navigation">
+<a href="index.html">Home</a>
+<a class="active" href="research.html">Research</a>
+<a href="design.html">Design</a>
+<a href="experience-prototype.html">Experience</a>
+<a href="impact.html">Impact</a>
+</nav>
+<header class="hero">
+<div class="reveal">
+<div class="eyebrow">Train the Feed · Research</div>
+<h1>Research.</h1>
+<p>Understanding how college students experience short-video algorithms, repeated exposure, and consumer influence.</p>
+<div class="chips">
+<span class="chip">Expert Interview</span>
+<span class="chip">Student Interviews</span>
+<span class="chip">Secondary Research</span>
+</div>
+</div>
+<aside class="loop reveal" aria-label="Simplified algorithm feedback loop">
+<div class="loopTitle">
+<span>How the feed learns</span>
+<span>Repeating cycle</span>
+</div>
+<div class="loopSteps">
+<div class="loopStep">
+<i>01</i>
+<b>User Action</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>02</i>
+<b>Recommendation</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>03</i>
+<b>Repetition</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>04</i>
+<b>Influence</b>
+<span>↺</span>
+</div>
+</div>
+</aside>
+</header>
+<main>
+<section class="section">
+<div class="goal reveal">
+<div class="eyebrow">01 · Research goal</div>
+<blockquote>How can an interactive learning experience help users recognize the connection between their short-video behavior, algorithmic recommendations, and consumer influence?</blockquote>
+<div class="goalSupport">
+<p>I wanted to understand how college students experience short-video recommendation systems and whether they notice how their own actions shape the feed over time.</p>
+<p>This project began as a course-based concept. After the semester ended, I independently synthesized the research, redesigned the experience flow, built the prototype, and developed the portfolio case study.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">02 · Research methods</div>
+<h2>Research Methods</h2>
+</div>
+<p>I used three research inputs to define the learning problem and guide the design direction.</p>
+</div>
+<div class="methods">
+<article class="method reveal">
+<div class="methodNum">01</div>
+<h3>Expert Interview</h3>
+<p>Clarified how behavioral signals—likes, skips, watch time, saves, and repeated engagement—shape future content.</p>
+<div class="tags">
+<span class="tag">Behavioral signals</span>
+<span class="tag">Repeated exposure</span>
+<span class="tag">Recommendation logic</span>
+</div>
+</article>
+<article class="method reveal">
+<div class="methodNum">02</div>
+<h3>Student Interviews</h3>
+<p>Revealed how college students describe scrolling habits, personalization, product exposure, and impulse purchases.</p>
+<div class="tags">
+<span class="tag">Scrolling habits</span>
+<span class="tag">Personalization</span>
+<span class="tag">Consumer behavior</span>
+</div>
+</article>
+<article class="method reveal">
+<div class="methodNum">03</div>
+<h3>Secondary Research</h3>
+<p>Supported the framing around algorithmic personalization, persuasive content, digital literacy, and learning design.</p>
+<div class="tags">
+<span class="tag">Digital literacy</span>
+<span class="tag">Influencer content</span>
+<span class="tag">Learning design</span>
+</div>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">03 · Key findings</div>
+<h2>Key Findings</h2>
+</div>
+<p>The research revealed three awareness gaps that shaped the final prototype direction.</p>
+</div>
+<div class="findings">
+<article class="finding reveal">
+<div class="findingNum">01</div>
+<div>
+<h3>Users know algorithms exist, but not how they train the feed.</h3>
+<p>Students often describe the feed as something that simply “knows what they like,” rather than as a system shaped by their own actions.</p>
+</div>
+<div class="why">
+<small>Why it matters</small>
+<p>The design needed to connect everyday actions to recommendation patterns.</p>
+</div>
+</article>
+<article class="finding reveal">
+<div class="findingNum">02</div>
+<div>
+<h3>Repeated exposure makes consumer content feel natural.</h3>
+<p>Product videos blend into lifestyle content, trends, routines, and casual recommendations, so users may not recognize them as persuasive.</p>
+</div>
+<div class="why">
+<small>Why it matters</small>
+<p>The experience needed to show how persuasion develops gradually through repetition.</p>
+</div>
+</article>
+<article class="finding reveal">
+<div class="findingNum">03</div>
+<div>
+<h3>Users experience personalization as personal preference.</h3>
+<p>Students often interpret repeated content as a reflection of their own taste, which can hide the role of algorithmic reinforcement.</p>
+</div>
+<div class="why">
+<small>Why it matters</small>
+<p>The prototype needed to make the feedback loop between action and system response visible.</p>
+</div>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">04 · Design implications</div>
+<h2>From Research to Design</h2>
+</div>
+<p>Research did not stay as research. Each finding became a concrete decision in the prototype.</p>
+</div>
+<div class="bridge">
+<div class="bridgeRow reveal">
+<div class="bridgeCell">
+<small>Research insight</small>
+<b>Users do not fully understand how their actions train the feed.</b>
+</div>
+<div class="arrow">→</div>
+<div class="bridgeCell">
+<small>Design decision</small>
+<b>Let users interact with content before explaining the algorithm.</b>
+</div>
+</div>
+<div class="bridgeRow reveal">
+<div class="bridgeCell">
+<small>Research insight</small>
+<b>Algorithmic influence builds gradually over time.</b>
+</div>
+<div class="arrow">→</div>
+<div class="bridgeCell">
+<small>Design decision</small>
+<b>Show feed changes across multiple rounds instead of one static explanation.</b>
+</div>
+</div>
+<div class="bridgeRow reveal">
+<div class="bridgeCell">
+<small>Research insight</small>
+<b>Product content often blends into entertainment.</b>
+</div>
+<div class="arrow">→</div>
+<div class="bridgeCell">
+<small>Design decision</small>
+<b>Use lifestyle, influencer, and trend-based content—not obvious ads only.</b>
+</div>
+</div>
+<div class="bridgeRow reveal">
+<div class="bridgeCell">
+<small>Research insight</small>
+<b>Users experience personalization as personal preference.</b>
+</div>
+<div class="arrow">→</div>
+<div class="bridgeCell">
+<small>Design decision</small>
+<b>Reveal how their actions shaped the simulated feed.</b>
+</div>
+</div>
+<div class="bridgeRow reveal">
+<div class="bridgeCell">
+<small>Research insight</small>
+<b>Students dislike being lectured about their media habits.</b>
+</div>
+<div class="arrow">→</div>
+<div class="bridgeCell">
+<small>Design decision</small>
+<b>Use simulation and reflection instead of passive explanation.</b>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">05 · Audience</div>
+<h2>Target Learner</h2>
+</div>
+<p>A representative learner synthesized from interview patterns and the project’s learning context.</p>
+</div>
+<article class="persona reveal">
+<div class="personaIntro">
+<div class="avatar"><img src="assets/persona/emma.jpg" alt="Illustrated portrait of Emma, the target learner persona"></div>
+<div class="eyebrow">Learner persona</div>
+<h3>Emma, 20</h3>
+<small>College student / Daily short-video user</small>
+<p>Emma uses short-video platforms for entertainment, stress relief, trends, and product discovery. She enjoys content that feels personal, but sometimes buys items after seeing them repeatedly.</p>
+<p>She knows algorithms exist, but does not always understand how likes, skips, saves, and watch time shape what appears next.</p>
+<div class="tags">
+<span class="tag">Entertainment</span>
+<span class="tag">Stress relief</span>
+<span class="tag">Trends</span>
+<span class="tag">Product discovery</span>
+</div>
+</div>
+<div class="personaDetails">
+<div class="detail">
+<h4>Pain Points</h4>
+<ul>
+<li>Notices repeated products but does not know why they keep appearing</li>
+<li>Struggles to separate genuine interest from repetition</li>
+<li>Sometimes regrets purchases influenced by repeated exposure</li>
+<li>Assumes a product is popular because “everyone has it”</li>
+</ul>
+</div>
+<div class="detail">
+<h4>Learner Needs</h4>
+<ul>
+<li>Understand how recommendations respond to behavior</li>
+<li>Recognize persuasive consumer content</li>
+<li>Notice repeated exposure patterns</li>
+<li>Reflect on how scrolling shapes preferences</li>
+<li>Build one realistic strategy for intentional consumption</li>
+</ul>
+</div>
+</div>
+</article>
+</section>
+<section class="cta reveal">
+<div>
+<div class="eyebrow">Research direction</div>
+<h2>Make the feedback loop visible.</h2>
+<p>The research led to a design direction focused on action, pattern recognition, and reflection through an interactive short-video simulation.</p>
+</div>
+<div>
+<a class="button" href="design.html">Next: Design Process <span>→</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="siteFooter"><div><b>Train the Feed</b>NYU Steinhardt · Learning Technology and Experience Design</div><div>Design Process for Learning Experiences · Spring 2026 · Instructor: Lexie Bryan<br>Project website independently redesigned and developed by Nate Chen.</div></footer>
+</div>
+<script>document.body.classList.add('revealReady');const targets=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:'0px 0px -7% 0px'});targets.forEach(target=>observer.observe(target))}else targets.forEach(target=>target.classList.add('visible'));</script>
+</body>
+</html>

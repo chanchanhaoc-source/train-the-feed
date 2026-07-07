@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Impact & Evaluation — Train the Feed</title>
+<style>
+:root{--bg:#070707;--panel:#0c0c0c;--ink:#efefed;--muted:#999;--line:#303030;--signal:#d3ded6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Arial,sans-serif}.shell{width:min(1320px,calc(100% - 48px));margin:auto}.nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:18px}.nav a{color:var(--ink);text-decoration:none;border:1px solid #393939;border-radius:999px;padding:10px 17px;font-size:13px;background:#090909;transition:.25s}.nav a:hover,.nav a.active{border-color:#aaa;background:#181818;transform:translateY(-2px)}.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#d4d4d1}.hero{min-height:100svh;display:grid;grid-template-columns:1.08fr .92fr;gap:9vw;align-items:center;padding:20px 0 80px}.hero>div,.hero>aside{position:relative;top:-8vh}.hero h1{max-width:1050px;font:500 clamp(64px,10vw,128px)/.92 Georgia,serif;letter-spacing:-.06em;margin:15px 0 20px}.hero>div>p{max-width:640px;font-size:18px;color:#b8bbc4}.heroSupport{font-size:14px!important;color:#888!important}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}.chip{border:1px solid #3a3a3a;border-radius:999px;padding:8px 12px;color:#aaa;font-size:11px}.evalLoop{border:1px solid #303030;background:#0b0b0b;padding:28px}.loopTitle{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #303030;font-size:10px;letter-spacing:.14em;color:#888}.loopSteps{display:grid;margin-top:22px}.loopStep{display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:14px;padding:19px 0;border-bottom:1px solid #292929;transition:background .25s,padding .25s}.loopStep:last-child{border:0}.loopStep b{font:500 20px Georgia,serif}.loopStep i{font-style:normal;color:#777}.loopStep span{color:var(--signal);transition:transform .25s}.loopStep:hover{background:#101010;padding-left:8px;padding-right:8px}.loopStep:hover span{transform:translateY(4px)}.loopStep:last-child:hover span{transform:rotate(90deg)}.section{padding:105px 0;border-top:1px solid var(--line)}.sectionHead{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;margin-bottom:45px}.section h2{font:500 clamp(44px,6vw,78px)/.96 Georgia,serif;letter-spacing:-.048em;margin:12px 0}.sectionHead p{align-self:end;color:var(--muted);font-size:16px;max-width:610px}.outcomes{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.outcome{min-height:270px;padding:25px 18px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0b0b;transition:.35s}.outcome:hover{transform:translateY(-5px);border-color:#5d665f;background:#101010}.num{font:500 32px Georgia,serif;color:#666}.outcome h3{font:500 23px/1.1 Georgia,serif;margin:42px 0 12px}.outcome p{color:#999;font-size:13px}.goals{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}.goal{padding:29px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:230px}.goal small{color:#666}.goal h3{font:500 28px Georgia,serif;margin:34px 0 11px}.goal p{color:#999}.metrics{border-top:1px solid #3a3a3a}.metric{display:grid;grid-template-columns:80px .65fr 1.35fr;gap:25px;align-items:center;padding:23px 0;border-bottom:1px solid #333;transition:.3s}.metric:hover{background:#0d0d0d;padding-left:12px;padding-right:12px}.metric>span{font:500 25px Georgia,serif;color:#666}.metric b{font:500 21px Georgia,serif}.metric p{color:#aaa;margin:0}.testing{border:1px solid #3b3b3b;background:#0c0c0c;padding:clamp(30px,5vw,60px)}.testingTop{display:grid;grid-template-columns:.75fr 1.25fr;gap:7vw;padding-bottom:35px;border-bottom:1px solid #333}.testing h3{font:500 clamp(34px,5vw,58px)/1 Georgia,serif;margin:13px 0}.testingTop>p{color:#aaa;font-size:16px;align-self:end}.testingGrid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;padding-top:35px}.testingGrid h4{font:500 26px Georgia,serif;margin:0 0 18px}.cleanList{list-style:none;padding:0;margin:0}.cleanList li{padding:12px 0 12px 20px;border-top:1px solid #2c2c2c;color:#aaa;position:relative}.cleanList li:before{content:'—';position:absolute;left:0;color:#666}.priorities{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #333;border-left:1px solid #333}.priority{padding:29px;border-right:1px solid #333;border-bottom:1px solid #333;min-height:235px;transition:.35s}.priority:hover{transform:translateY(-5px);background:#0e0e0e}.priority small{color:#666}.priority h3{font:500 28px Georgia,serif;margin:35px 0 11px}.priority p{color:#999}.reflection{border:1px solid #3c3c3c;background:#0b0b0b;padding:clamp(32px,6vw,72px)}.reflection h2{font-size:clamp(46px,7vw,88px);max-width:900px}.reflectionBody{display:grid;grid-template-columns:1fr 1fr;gap:7vw;border-top:1px solid #333;padding-top:28px}.reflectionBody p{color:#aaa;font-size:16px;margin:0}.steps{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #333;border-left:1px solid #333}.nextStep{display:grid;grid-template-columns:46px 1fr;gap:14px;padding:22px;border-right:1px solid #333;border-bottom:1px solid #333}.nextStep span{font:500 21px Georgia,serif;color:#666}.nextStep b{font:500 19px Georgia,serif}.cta{margin:105px 0 130px;padding:clamp(32px,6vw,72px);border:1px solid #3d3d3d;background:#0b0b0b;display:grid;grid-template-columns:1.2fr .8fr;gap:7vw;align-items:end}.cta h2{font:500 clamp(44px,7vw,86px)/.92 Georgia,serif;letter-spacing:-.05em;margin:13px 0 20px}.cta p{color:#aaa;max-width:700px}.button{display:inline-flex;justify-content:space-between;gap:28px;padding:15px 18px;background:#eee;color:#080808;text-decoration:none;font-weight:700}.button span{transition:.3s}.button:hover span{transform:translateX(5px)}.revealReady .reveal{opacity:0;transform:translate3d(0,20px,0);transition:opacity .62s ease,transform .75s cubic-bezier(.2,.8,.2,1)}.revealReady .reveal.visible{opacity:1;transform:none}.outcomes .reveal:nth-child(2),.goals .reveal:nth-child(2),.priorities .reveal:nth-child(2){transition-delay:.06s}.outcomes .reveal:nth-child(3),.priorities .reveal:nth-child(3){transition-delay:.11s}.outcomes .reveal:nth-child(4),.priorities .reveal:nth-child(4){transition-delay:.16s}.outcomes .reveal:nth-child(5){transition-delay:.21s}@media(max-width:1050px){.hero{grid-template-columns:1fr}.evalLoop{max-width:650px}.sectionHead{grid-template-columns:1fr}.outcomes{grid-template-columns:repeat(2,1fr)}.outcome:last-child{grid-column:1/-1}.testingTop{grid-template-columns:1fr}.cta{grid-template-columns:1fr}}@media(max-width:650px){.shell{width:calc(100% - 28px)}.nav{height:76px;overflow-x:auto;justify-content:flex-start}.nav a{white-space:nowrap;padding:8px 13px;font-size:11px}.hero{min-height:100svh;padding:40px 0 80px}.hero>div,.hero>aside{top:-5vh}.hero h1{font-size:58px}.hero>div>p{font-size:18px}.outcomes,.goals,.priorities,.steps{grid-template-columns:1fr}.outcome:last-child{grid-column:auto}.metric{grid-template-columns:45px 1fr}.metric p{grid-column:2}.testingGrid,.reflectionBody{grid-template-columns:1fr;gap:30px}.section{padding:75px 0}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+<style>.siteFooter{padding:28px 0 36px;border-top:1px solid #303030;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;color:#777;font-size:11px;line-height:1.6}.siteFooter b{display:block;color:#aaa;font-weight:500;margin-bottom:3px}.siteFooter div:last-child{text-align:right}@media(max-width:650px){.siteFooter{grid-template-columns:1fr;gap:14px}.siteFooter div:last-child{text-align:left}}</style>
+
+<style>
+@media(max-width:650px){
+  main{padding-bottom:70px}
+  .section{padding:56px 0!important}
+  .sectionHead{gap:18px!important;margin-bottom:28px!important}
+  .section h2{font-size:clamp(36px,12vw,52px)!important}
+  .hero{min-height:86svh!important}
+  .hero h1{font-size:58px!important}
+  .cta,.nextPage{margin:64px 0 82px!important;padding:30px 22px!important}
+  .cta h2,.nextPage h2{font-size:44px!important}
+  .button{width:auto;min-width:190px;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="nav" aria-label="Case study navigation">
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="design.html">Design</a>
+<a href="experience-prototype.html">Experience</a>
+<a class="active" href="impact.html">Impact</a>
+</nav>
+<header class="hero">
+<div class="reveal">
+<div class="eyebrow">Train the Feed · Impact</div>
+<h1>Impact &<br>Evaluation.</h1>
+<p>Measuring whether the experience helps learners understand algorithmic influence, recognize persuasive content, and reflect on their own digital behavior.</p>
+<p class="heroSupport">The current portfolio outcome is a complete prototype and an honest framework for future evaluation—not a claim of untested results.</p>
+<div class="chips">
+<span class="chip">Prototype Outcome</span>
+<span class="chip">Evaluation Plan</span>
+<span class="chip">Future Iteration</span>
+</div>
+</div>
+<aside class="evalLoop reveal" aria-label="Evaluation iteration loop">
+<div class="loopTitle">
+<span>Evaluation structure</span>
+<span>Repeating loop</span>
+</div>
+<div class="loopSteps">
+<div class="loopStep">
+<i>01</i>
+<b>Prototype</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>02</i>
+<b>Test</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>03</i>
+<b>Learn</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>04</i>
+<b>Iterate</b>
+<span>↺</span>
+</div>
+</div>
+</aside>
+</header>
+<main>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">01 · Current outcome</div>
+<h2>Project Outcome</h2>
+</div>
+<p>The current outcome is a completed interactive prototype, a clear learning design strategy, and a plan for evaluating learner understanding.</p>
+</div>
+<div class="outcomes">
+<article class="outcome reveal">
+<div class="num">01</div>
+<h3>Research Synthesis</h3>
+<p>Combined expert, learner, and secondary research into design insights.</p>
+</article>
+<article class="outcome reveal">
+<div class="num">02</div>
+<h3>Learning Flow</h3>
+<p>Translated findings into goals, principles, and an experience sequence.</p>
+</article>
+<article class="outcome reveal">
+<div class="num">03</div>
+<h3>Interaction Logic</h3>
+<p>Built a feed model around actions, shifts, pattern reveal, and reflection.</p>
+</article>
+<article class="outcome reveal">
+<div class="num">04</div>
+<h3>AI-Assisted Build</h3>
+<p>Used Codex and Claude Code for implementation, debugging, and development.</p>
+</article>
+<article class="outcome reveal">
+<div class="num">05</div>
+<h3>Evaluation Framework</h3>
+<p>Defined how awareness, recognition, reflection, and usability would be assessed.</p>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">02 · Questions</div>
+<h2>Evaluation Goals</h2>
+</div>
+<p>Does the experience help learners understand how short-video actions shape recommendations and consumer decisions?</p>
+</div>
+<div class="goals">
+<article class="goal reveal">
+<small>Goal 01</small>
+<h3>Algorithm Awareness</h3>
+<p>Can learners explain how likes, skips, saves, and watch time shape future recommendations?</p>
+</article>
+<article class="goal reveal">
+<small>Goal 02</small>
+<h3>Persuasive Content Recognition</h3>
+<p>Can learners identify influence in lifestyle, trend, influencer, and product content?</p>
+</article>
+<article class="goal reveal">
+<small>Goal 03</small>
+<h3>Reflection</h3>
+<p>Can learners connect the simulation to their own scrolling and purchasing habits?</p>
+</article>
+<article class="goal reveal">
+<small>Goal 04</small>
+<h3>Usability</h3>
+<p>Can learners complete the experience without confusion or friction?</p>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">03 · Evidence</div>
+<h2>Success Metrics</h2>
+</div>
+<p>Success is defined through observable understanding, recognition, reflection, usability, and transfer—not invented percentages.</p>
+</div>
+<div class="metrics reveal">
+<div class="metric">
+<span>01</span>
+<b>Algorithm Awareness</b>
+<p>Describe the action → recommendation → repetition loop.</p>
+</div>
+<div class="metric">
+<span>02</span>
+<b>Persuasive Recognition</b>
+<p>Identify at least two persuasive strategies in short-video content.</p>
+</div>
+<div class="metric">
+<span>03</span>
+<b>Reflection</b>
+<p>Connect the simulation to personal media habits.</p>
+</div>
+<div class="metric">
+<span>04</span>
+<b>Usability</b>
+<p>Complete the prototype with minimal confusion.</p>
+</div>
+<div class="metric">
+<span>05</span>
+<b>Transfer</b>
+<p>Create one realistic strategy for intentional digital consumption.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<article class="testing reveal">
+<div class="testingTop">
+<div>
+<div class="eyebrow">04 · Planned evaluation</div>
+<h3>Test with the people the experience was designed for.</h3>
+</div>
+<p>The next step is a focused study with college students who regularly use short-video platforms.</p>
+</div>
+<div class="testingGrid">
+<div>
+<h4>Testing Setup</h4>
+<ul class="cleanList">
+<li>5–8 college students</li>
+<li>Think-aloud usability testing</li>
+<li>Short post-experience interview</li>
+<li>Pre/post reflection questions</li>
+<li>Observe confusion and drop-off points</li>
+</ul>
+</div>
+<div>
+<h4>What I Would Look For</h4>
+<ul class="cleanList">
+<li>Whether learners understand why the feed changed</li>
+<li>Whether the pattern reveal feels meaningful</li>
+<li>Whether persuasion is recognized without direct instruction</li>
+<li>Whether prompts feel personal but not judgmental</li>
+<li>Whether the final strategy feels realistic</li>
+</ul>
+</div>
+</div>
+</article>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">05 · Future refinement</div>
+<h2>Iteration Priorities</h2>
+</div>
+<p>Future iterations would focus on clarity, realism, reflection, and accessibility.</p>
+</div>
+<div class="priorities">
+<article class="priority reveal">
+<small>01</small>
+<h3>Clearer Recommendation Shifts</h3>
+<p>Strengthen feedback or the summary if learners do not notice how the feed changes.</p>
+</article>
+<article class="priority reveal">
+<small>02</small>
+<h3>More Content Variety</h3>
+<p>Add categories and content patterns so the feed feels less predictable.</p>
+</article>
+<article class="priority reveal">
+<small>03</small>
+<h3>Better Reflection Prompts</h3>
+<p>Connect prompts to late-night scrolling, product discovery, and impulse purchases.</p>
+</article>
+<article class="priority reveal">
+<small>04</small>
+<h3>Accessibility Improvements</h3>
+<p>Continue reviewing contrast, text size, keyboard navigation, and reduced motion.</p>
+</article>
+</div>
+</section>
+<section class="section">
+<article class="reflection reveal">
+<div class="eyebrow">06 · Personal reflection</div>
+<h2>This project connected learning experience design with interaction design.</h2>
+<div class="reflectionBody">
+<p>The key shift was realizing that algorithm awareness is not only an information problem. Many users already know algorithms exist. The harder challenge is helping them notice how small actions shape the feed over time.</p>
+<p>Building the prototype pushed me to translate learning goals into actions, feedback moments, prompts, and interface states. Codex and Claude Code accelerated implementation, while the core design work remained the learning sequence, interaction logic, and reflective structure.</p>
+</div>
+</article>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">07 · Continued development</div>
+<h2>Next Steps</h2>
+</div>
+<p>If I continued developing Train the Feed, I would focus on testing, refinement, and stronger learning transfer.</p>
+</div>
+<div class="steps reveal">
+<div class="nextStep">
+<span>01</span>
+<b>Run usability testing with college students</b>
+</div>
+<div class="nextStep">
+<span>02</span>
+<b>Compare understanding before and after</b>
+</div>
+<div class="nextStep">
+<span>03</span>
+<b>Add more realistic content categories</b>
+</div>
+<div class="nextStep">
+<span>04</span>
+<b>Improve recommendation feedback</b>
+</div>
+<div class="nextStep">
+<span>05</span>
+<b>Strengthen the final results summary</b>
+</div>
+<div class="nextStep">
+<span>06</span>
+<b>Explore a media-literacy workshop format</b>
+</div>
+</div>
+</section>
+<section class="cta reveal">
+<div>
+<div class="eyebrow">From prototype to tested learning experience</div>
+<h2>See the current prototype.</h2>
+<p>The next step is to evaluate whether Train the Feed helps learners recognize algorithmic patterns and make more intentional choices.</p>
+</div>
+<div>
+<a class="button" href="experience-prototype.html">View Prototype <span>→</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="siteFooter"><div><b>Train the Feed</b>NYU Steinhardt · Learning Technology and Experience Design</div><div>Design Process for Learning Experiences · Spring 2026 · Instructor: Lexie Bryan<br>Project website independently redesigned and developed by Nate Chen.</div></footer>
+</div>
+<script>document.body.classList.add('revealReady');const targets=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:'0px 0px -7% 0px'});targets.forEach(target=>observer.observe(target))}else targets.forEach(target=>target.classList.add('visible'));</script>
+</body>
+</html>

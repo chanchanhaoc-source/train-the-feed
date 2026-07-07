@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design — Train the Feed</title>
+<style>
+:root{--bg:#070707;--panel:#0c0c0c;--ink:#efefed;--muted:#999;--line:#303030;--signal:#d3ded6}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Arial,sans-serif}.shell{width:min(1240px,calc(100% - 48px));margin:auto}.nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:18px}.nav a{color:var(--ink);text-decoration:none;border:1px solid #393939;border-radius:999px;padding:10px 17px;font-size:13px;background:#090909;transition:.25s}.nav a:hover,.nav a.active{border-color:#aaa;background:#181818;transform:translateY(-2px)}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8f9691}.hero{min-height:calc(100svh - 92px);display:grid;grid-template-columns:1.08fr .92fr;gap:9vw;align-items:center;padding:8vh 0 10vh}.hero h1{font:500 clamp(82px,12vw,166px)/.8 Georgia,serif;letter-spacing:-.068em;margin:18px 0 35px}.hero p{max-width:700px;color:#c5c5c1;font-size:clamp(17px,2vw,23px)}.heroSupport{font-size:14px!important;color:#888!important}.chips,.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}.chip,.tag{border:1px solid #3a3a3a;border-radius:999px;padding:8px 12px;color:#aaa;font-size:11px}.designLoop{border:1px solid var(--line);background:#0b0b0b;padding:28px}.designLoop>div:first-child{display:flex;justify-content:space-between;color:#888;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding-bottom:18px;border-bottom:1px solid var(--line)}.loopSteps{display:grid;margin-top:20px}.loopStep{display:grid;grid-template-columns:40px 1fr auto;gap:15px;align-items:center;padding:20px 0;border-bottom:1px solid #292929}.loopStep:last-child{border:0}.loopStep i{font-style:normal;color:#666}.loopStep b{font:500 21px Georgia,serif}.loopStep span{color:var(--signal)}.section{padding:105px 0;border-top:1px solid var(--line)}.sectionHead{display:grid;grid-template-columns:.7fr 1.3fr;gap:7vw;margin-bottom:45px}.section h2{font:500 clamp(44px,6vw,78px)/.96 Georgia,serif;letter-spacing:-.048em;margin:12px 0}.sectionHead p{align-self:end;color:var(--muted);font-size:16px;max-width:600px}.challenge{border:1px solid #3b3b3b;background:#0c0c0c;padding:clamp(30px,5vw,62px)}.challenge blockquote{font:500 clamp(34px,5vw,62px)/1.04 Georgia,serif;letter-spacing:-.04em;margin:18px 0 35px;max-width:1080px}.challenge>p{color:#aaa;max-width:840px;font-size:16px}.constraints{display:grid;grid-template-columns:repeat(3,1fr);margin-top:38px;border-top:1px solid #333;border-left:1px solid #333}.constraint{padding:24px;border-right:1px solid #333;border-bottom:1px solid #333}.constraint small{color:#666}.constraint h3{font:500 25px Georgia,serif;margin:28px 0 8px}.constraint p{color:#999;margin:0}.principles{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}.principle{min-height:270px;padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#0b0b0b;transition:.35s}.principle:hover{transform:translateY(-5px);border-color:#5f6862;background:#101010}.num{font:500 34px Georgia,serif;color:#666}.principle h3{font:500 29px Georgia,serif;margin:42px 0 12px}.principle p{color:#999;max-width:470px}.goals{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}.goal{padding:25px 18px;border-right:1px solid #333}.goal:last-child{border:0}.goal small{color:#666}.goal h3{font:500 23px/1.12 Georgia,serif;margin:30px 0 12px}.goal p{color:#999;font-size:13px}.taxonomy{color:#777;font-size:12px;margin-top:20px}.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #333;border-left:1px solid #333}.concept{padding:30px;border-right:1px solid #333;border-bottom:1px solid #333;min-height:330px;background:#0a0a0a;position:relative}.concept small{color:#666}.concept h3{font:500 29px Georgia,serif;margin:45px 0 15px}.concept p{color:#999}.concept.final{background:#101310;border-color:#778078}.concept.final:after{content:'SELECTED';position:absolute;right:18px;top:18px;color:var(--signal);font-size:9px;letter-spacing:.15em}.concept.final h3{color:#fff}.finalConcept{display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw;align-items:center;border:1px solid #3e443f;background:#0b0d0b;padding:clamp(30px,6vw,70px)}.phone{width:min(330px,75vw);aspect-ratio:430/932;margin:auto;border:1px solid #444;border-radius:48px;padding:9px;background:#020202}.screen{height:100%;border-radius:39px;overflow:hidden;position:relative;background:#000}.screen img{width:100%;height:100%;object-fit:contain}.screen:after{content:'♥';position:absolute;right:14px;bottom:74px;width:43px;height:43px;border:1px solid #fff7;border-radius:50%;display:grid;place-items:center;background:#050505a8}.finalConcept h2{font:500 clamp(45px,6vw,76px)/.95 Georgia,serif;letter-spacing:-.045em;margin:13px 0 24px}.finalConcept p{color:#aaa;font-size:16px}.miniFlow{display:grid;grid-template-columns:repeat(4,1fr);margin-top:35px;border-top:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}.miniFlow span{padding:15px 8px;border-right:1px solid #333;text-align:center;font-size:11px}.miniFlow span:last-child{border:0}.logic{display:grid;grid-template-columns:repeat(9,auto);align-items:stretch}.logicStep{width:100%;padding:22px 15px;border-top:1px solid #3a3a3a;border-bottom:1px solid #3a3a3a}.logicStep small{color:#666}.logicStep h3{font:500 20px Georgia,serif;margin:25px 0 10px}.logicStep p{color:#888;font-size:11px}.logicArrow{width:34px;display:grid;place-items:center;color:#777}.rationales{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #333;border-left:1px solid #333}.rationale{padding:28px;border-right:1px solid #333;border-bottom:1px solid #333;min-height:220px}.rationale small{color:#666}.rationale h3{font:500 27px Georgia,serif;margin:30px 0 10px}.rationale p{color:#999}.cta{margin:105px 0 130px;padding:clamp(32px,6vw,72px);border:1px solid #3d3d3d;background:#0b0b0b;display:grid;grid-template-columns:1.2fr .8fr;gap:7vw;align-items:end}.cta h2{font:500 clamp(44px,7vw,88px)/.92 Georgia,serif;letter-spacing:-.05em;margin:13px 0 20px}.cta p{color:#aaa;max-width:680px}.button{display:inline-flex;justify-content:space-between;gap:28px;padding:15px 18px;background:#eee;color:#080808;text-decoration:none;font-weight:700}.button span{transition:.3s}.button:hover span{transform:translateX(5px)}.revealReady .reveal{opacity:0;transform:translate3d(0,20px,0);transition:opacity .62s ease,transform .75s cubic-bezier(.2,.8,.2,1)}.revealReady .reveal.visible{opacity:1;transform:none}.principles .reveal:nth-child(2),.concepts .reveal:nth-child(2),.rationales .reveal:nth-child(2){transition-delay:.07s}.principles .reveal:nth-child(3),.concepts .reveal:nth-child(3),.rationales .reveal:nth-child(3){transition-delay:.12s}.principles .reveal:nth-child(4),.rationales .reveal:nth-child(4){transition-delay:.17s}@media(max-width:1000px){.hero{grid-template-columns:1fr}.designLoop{max-width:650px}.sectionHead{grid-template-columns:1fr}.goals{grid-template-columns:1fr 1fr}.goal:nth-child(2){border-right:0}.goal:nth-child(-n+2){border-bottom:1px solid #333}.finalConcept{grid-template-columns:1fr}.logic{grid-template-columns:1fr}.logicArrow{width:100%;height:34px;transform:rotate(90deg)}.logicStep{border:1px solid #333}.cta{grid-template-columns:1fr}}@media(max-width:650px){.shell{width:calc(100% - 28px)}.nav{height:76px;overflow-x:auto;justify-content:flex-start}.nav a{white-space:nowrap;padding:8px 13px;font-size:11px}.hero{padding:75px 0}.hero h1{font-size:78px}.constraints,.principles,.concepts,.rationales,.goals{grid-template-columns:1fr}.constraint,.principle,.concept,.rationale,.goal{border-right:1px solid #333!important;border-bottom:1px solid #333!important}.goal{min-height:190px}.miniFlow{grid-template-columns:1fr 1fr}.miniFlow span:nth-child(2){border-right:0}.miniFlow span:nth-child(-n+2){border-bottom:1px solid #333}.section{padding:75px 0}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+<style>
+.shell{width:min(1320px,calc(100% - 48px))}.eyebrow{font-size:11px;letter-spacing:.15em;color:#d4d4d1}.hero{min-height:100svh;padding:20px 0 80px}.hero>div,.hero>aside{position:relative;top:-8vh}.hero h1{max-width:1050px;font:500 clamp(64px,10vw,128px)/.92 Georgia,serif;letter-spacing:-.06em;margin:15px 0 20px}.hero>div>p{max-width:640px;font-size:18px;color:#b8bbc4}.hero>div>.heroSupport{font-size:14px;color:#888}.designLoop{border:1px solid #303030;background:#0b0b0b;padding:28px}.designLoop>div:first-child{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #303030;font-size:10px;letter-spacing:.14em;text-transform:none;color:#888}.designLoop .loopStep{grid-template-columns:36px 1fr auto;gap:14px;padding:19px 0}.designLoop .loopStep b{font:500 20px Georgia,serif}@media(max-width:650px){.hero{min-height:100svh;padding:40px 0 80px}.hero>div,.hero>aside{top:-5vh}.hero h1{font-size:58px}.hero>div>p{font-size:18px}.hero>div>.heroSupport{font-size:14px}}
+</style>
+<style>.designLoop .loopStep{transition:background .25s,padding .25s}.designLoop .loopStep span{transition:transform .25s}.designLoop .loopStep:hover{background:#101010;padding-left:8px;padding-right:8px}.designLoop .loopStep:hover span{transform:translateY(4px)}.designLoop .loopStep:last-child:hover span{transform:rotate(90deg)}</style>
+<style>.siteFooter{padding:28px 0 36px;border-top:1px solid #303030;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;color:#777;font-size:11px;line-height:1.6}.siteFooter b{display:block;color:#aaa;font-weight:500;margin-bottom:3px}.siteFooter div:last-child{text-align:right}@media(max-width:650px){.siteFooter{grid-template-columns:1fr;gap:14px}.siteFooter div:last-child{text-align:left}}</style>
+
+<style>
+@media(max-width:650px){
+  main{padding-bottom:70px}
+  .section{padding:56px 0!important}
+  .sectionHead{gap:18px!important;margin-bottom:28px!important}
+  .section h2{font-size:clamp(36px,12vw,52px)!important}
+  .hero{min-height:86svh!important}
+  .hero h1{font-size:58px!important}
+  .cta,.nextPage{margin:64px 0 82px!important;padding:30px 22px!important}
+  .cta h2,.nextPage h2{font-size:44px!important}
+  .button{width:auto;min-width:190px;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<nav class="nav" aria-label="Case study navigation">
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a class="active" href="design.html">Design</a>
+<a href="experience-prototype.html">Experience</a>
+<a href="impact.html">Impact</a>
+</nav>
+<header class="hero">
+<div class="reveal">
+<div class="eyebrow">Train the Feed · Design</div>
+<h1>Design.</h1>
+<p>Turning research insights into an interactive learning experience that helps users see how their actions train the feed.</p>
+<p class="heroSupport">The challenge was to make an invisible feedback loop visible, personal, and easy to reflect on.</p>
+<div class="chips">
+<span class="chip">Learning Experience Design</span>
+<span class="chip">Interaction Design</span>
+<span class="chip">Algorithm Awareness</span>
+<span class="chip">Reflection-Based Learning</span>
+</div>
+</div>
+<aside class="designLoop reveal" aria-label="Design learning loop">
+<div>
+<span>Experience structure</span>
+<span>Repeating loop</span>
+</div>
+<div class="loopSteps">
+<div class="loopStep">
+<i>01</i>
+<b>User Action</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>02</i>
+<b>Feed Response</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>03</i>
+<b>Repetition</b>
+<span>↓</span>
+</div>
+<div class="loopStep">
+<i>04</i>
+<b>Reflection</b>
+<span>↺</span>
+</div>
+</div>
+</aside>
+</header>
+<main>
+<section class="section">
+<article class="challenge reveal">
+<div class="eyebrow">01 · Design challenge</div>
+<blockquote>How might we help college students recognize how their short-video actions shape future recommendations and influence consumer decisions over time?</blockquote>
+<p>Students often know algorithms exist, but do not clearly see how their own behaviors train the feed. Instead of another passive explainer, I designed around action, pattern recognition, and reflection.</p>
+<div class="constraints">
+<div class="constraint">
+<small>01</small>
+<h3>Make it experiential</h3>
+<p>Learners should learn by interacting, not only reading.</p>
+</div>
+<div class="constraint">
+<small>02</small>
+<h3>Make it personal</h3>
+<p>The experience should respond to user choices.</p>
+</div>
+<div class="constraint">
+<small>03</small>
+<h3>Make it reflective</h3>
+<p>The simulation should connect to real scrolling habits.</p>
+</div>
+</div>
+</article>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">02 · Principles</div>
+<h2>Design Principles</h2>
+</div>
+<p>I translated the research findings into four principles that guided the prototype direction.</p>
+</div>
+<div class="principles">
+<article class="principle reveal">
+<div class="num">01</div>
+<h3>Experience before explanation</h3>
+<p>Learners interact with a simulated feed before seeing how their actions shaped recommendations.</p>
+</article>
+<article class="principle reveal">
+<div class="num">02</div>
+<h3>Make the invisible loop visible</h3>
+<p>Reveal the connection between action, recommendation change, repeated exposure, and reflection.</p>
+</article>
+<article class="principle reveal">
+<div class="num">03</div>
+<h3>Show persuasion as gradual</h3>
+<p>Consumer influence appears through lifestyle, influencer, and trend content—not only obvious ads.</p>
+</article>
+<article class="principle reveal">
+<div class="num">04</div>
+<h3>Reflect without blaming</h3>
+<p>Help learners notice patterns and make intentional choices without telling them they were manipulated.</p>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">03 · Outcomes</div>
+<h2>Learning Goals</h2>
+</div>
+<p>The learning goals focused on awareness, recognition, reflection, and intentional action.</p>
+</div>
+<div class="goals reveal">
+<article class="goal">
+<small>Goal 01</small>
+<h3>Algorithmic Awareness</h3>
+<p>Understand how recommendations respond to user behavior.</p>
+</article>
+<article class="goal">
+<small>Goal 02</small>
+<h3>Persuasive Strategy Recognition</h3>
+<p>Recognize persuasive consumer strategies in short videos.</p>
+</article>
+<article class="goal">
+<small>Goal 03</small>
+<h3>Reflective Digital Consumption</h3>
+<p>Reflect on how repetition may shape preferences and purchases.</p>
+</article>
+<article class="goal">
+<small>Goal 04</small>
+<h3>Intentional Strategy Building</h3>
+<p>Create one strategy for more intentional digital consumption.</p>
+</article>
+</div>
+<p class="taxonomy reveal">Informed by Bloom’s and Fink’s taxonomies, emphasizing understanding, application, reflection, and self-directed learning.</p>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">04 · Exploration</div>
+<h2>Concept Development</h2>
+</div>
+<p>I compared three ways to teach algorithm awareness before selecting the simulated feed.</p>
+</div>
+<div class="concepts">
+<article class="concept reveal">
+<small>Idea 01</small>
+<h3>Algorithm Explainer</h3>
+<p>A text-based explanation could define recommendation systems, but felt too passive.</p>
+</article>
+<article class="concept reveal">
+<small>Idea 02</small>
+<h3>Persuasive Content Analysis</h3>
+<p>Users could identify influencer marketing, but not see recommendations changing over time.</p>
+</article>
+<article class="concept final reveal">
+<small>Idea 03</small>
+<h3>Simulated Short-Video Feed</h3>
+<p>Learners experience the feedback loop directly through choices, repetition, and reflection.</p>
+</article>
+</div>
+</section>
+<section class="section">
+<article class="finalConcept reveal">
+<div class="phone">
+<div class="screen">
+<img src="assets/screenshots/fitness/fitness1.png" alt="Train the Feed interactive prototype preview">
+</div>
+</div>
+<div>
+<div class="eyebrow">05 · Final concept</div>
+<h2>Train the Feed</h2>
+<p>A simulated short-video experience where learners interact with content, notice recommendation patterns, and reflect on how behavior can shape future feeds and consumer decisions.</p>
+<div class="miniFlow">
+<span>Interact</span>
+<span>Notice Patterns</span>
+<span>Reflect</span>
+<span>Build Strategy</span>
+</div>
+</div>
+</article>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">06 · Learning system</div>
+<h2>Logic Model</h2>
+</div>
+<p>The experience connects interaction to learning outcomes through a simple model.</p>
+</div>
+<div class="logic reveal">
+<article class="logicStep">
+<small>01</small>
+<h3>Inputs</h3>
+<p>Research insights and learner needs.</p>
+</article>
+<div class="logicArrow">→</div>
+<article class="logicStep">
+<small>02</small>
+<h3>Activities</h3>
+<p>Simulation, actions, reveal, reflection.</p>
+</article>
+<div class="logicArrow">→</div>
+<article class="logicStep">
+<small>03</small>
+<h3>Outputs</h3>
+<p>Identify repetition and persuasion.</p>
+</article>
+<div class="logicArrow">→</div>
+<article class="logicStep">
+<small>04</small>
+<h3>Short-Term</h3>
+<p>Understand how actions shape feeds.</p>
+</article>
+<div class="logicArrow">→</div>
+<article class="logicStep">
+<small>05</small>
+<h3>Long-Term</h3>
+<p>Become a more intentional consumer.</p>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">07 · Decisions</div>
+<h2>Design Rationale</h2>
+</div>
+<p>The key decisions made algorithmic influence experiential, visible, and reflective.</p>
+</div>
+<div class="rationales">
+<article class="rationale reveal">
+<small>01</small>
+<h3>Simulation over explanation</h3>
+<p>A simulated feed makes the feedback loop easier to feel than text alone.</p>
+</article>
+<article class="rationale reveal">
+<small>02</small>
+<h3>Loop over linear lesson</h3>
+<p>The experience mirrors action, recommendation shift, repetition, and reflection.</p>
+</article>
+<article class="rationale reveal">
+<small>03</small>
+<h3>Organic content over obvious ads</h3>
+<p>Lifestyle, trend, influencer, and product content show how persuasion blends into entertainment.</p>
+</article>
+<article class="rationale reveal">
+<small>04</small>
+<h3>Reflection over judgment</h3>
+<p>Guided prompts help learners notice patterns without feeling blamed.</p>
+</article>
+</div>
+</section>
+<section class="cta reveal">
+<div>
+<div class="eyebrow">From design logic to interactive prototype</div>
+<h2>Act. Observe. Reflect.</h2>
+<p>The final design became Train the Feed: a short-video simulation where learners see their own signals reshape the experience.</p>
+</div>
+<div>
+<a class="button" href="experience-prototype.html">Next: Experience <span>→</span>
+</a>
+</div>
+</section>
+</main>
+<footer class="siteFooter"><div><b>Train the Feed</b>NYU Steinhardt · Learning Technology and Experience Design</div><div>Design Process for Learning Experiences · Spring 2026 · Instructor: Lexie Bryan<br>Project website independently redesigned and developed by Nate Chen.</div></footer>
+</div>
+<script>document.body.classList.add('revealReady');const targets=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1,rootMargin:'0px 0px -7% 0px'});targets.forEach(target=>observer.observe(target))}else targets.forEach(target=>target.classList.add('visible'));</script>
+</body>
+</html>
