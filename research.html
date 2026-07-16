@@ -82,6 +82,9 @@
 <style>
 .evidence{margin-top:34px;border:1px solid #303030;background:#0b0b0b;padding:clamp(24px,4vw,38px)}.evidenceIntro{display:grid;grid-template-columns:.7fr 1.3fr;gap:6vw;align-items:end;padding-bottom:24px;border-bottom:1px solid #303030}.evidenceIntro h3{font:500 clamp(30px,4vw,46px)/1 Georgia,serif;letter-spacing:-.035em;margin:8px 0 0}.evidenceGrid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid #303030;border-top:1px solid #303030;margin-top:28px}.evidenceGrid article{min-height:360px;padding:24px;border-right:1px solid #303030;border-bottom:1px solid #303030;background:#090909}.evidenceGrid small{display:block;color:#777;text-transform:uppercase;letter-spacing:.13em;font-size:9px;margin-bottom:28px}.evidenceGrid h4{font:500 27px Georgia,serif;margin:0 0 16px}.evidenceGrid p{color:#aaa;margin:0 0 14px}.evidenceNote{color:#d5d5d1!important}.evidenceLinks,.referenceTags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.evidenceLinks a,.referenceTags span{color:#eee;text-decoration:none;border:1px solid #3a3a3a;border-radius:999px;padding:7px 10px;font-size:10px}.evidenceLinks a:hover{border-color:#aaa}@media(max-width:850px){.evidenceIntro{grid-template-columns:1fr;gap:10px}.evidenceGrid{grid-template-columns:1fr}.evidenceGrid article{min-height:auto}.evidence{margin-top:24px;padding:22px 18px}}
 </style>
+<style>
+.methodList{list-style:none;margin:14px 0 0;padding:0}.methodList li{color:#aaa;padding:7px 0 7px 14px;border-top:1px solid #292929;position:relative}.methodList li:before{content:'—';position:absolute;left:0;color:#666}.methodContribution{margin-top:auto!important;color:#d5d5d1!important}.findingLabel{display:block;color:#777;letter-spacing:.13em;text-transform:uppercase;font-size:9px;margin:0 0 9px}.finding .support{margin-top:20px}.participantQuote{margin:34px auto 0;border:1px solid #303030;background:#0b0b0b;padding:clamp(30px,5vw,64px);text-align:center;max-width:1080px}.participantQuote blockquote{font:500 clamp(34px,5vw,64px)/1.05 Georgia,serif;letter-spacing:-.04em;margin:0 auto 24px;color:#efefed;max-width:900px}.participantQuote figcaption{color:#888;letter-spacing:.12em;text-transform:uppercase;font-size:10px}.feedbackLoop{border:1px solid #303030;background:#0b0b0b;padding:clamp(24px,4vw,40px)}.feedbackTrack{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid #303030;border-bottom:1px solid #303030}.feedbackStep{position:relative;min-height:210px;padding:25px 18px;border-right:1px solid #303030}.feedbackStep:last-child{border-right:0}.feedbackStep:not(:last-child):after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);width:24px;height:24px;border:1px solid #303030;background:#0b0b0b;display:grid;place-items:center;color:#d3ded6;z-index:1}.feedbackStep span{display:block;color:#666;font:500 30px Georgia,serif;margin-bottom:54px}.feedbackStep b{font:500 22px/1.15 Georgia,serif}.loopExplanation{max-width:690px;color:#aaa;margin:24px 0 0;font-size:16px}.sourceMeta{color:#888!important}.whyTitle{display:block;color:#777;letter-spacing:.13em;text-transform:uppercase;font-size:9px;margin:24px 0 8px}@media(max-width:850px){.feedbackTrack{grid-template-columns:1fr;border:1px solid #303030}.feedbackStep{min-height:auto;border-right:0;border-bottom:1px solid #303030;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:center}.feedbackStep:last-child{border-bottom:0}.feedbackStep:not(:last-child):after{content:'↓';right:auto;left:18px;top:auto;bottom:-12px;transform:none}.feedbackStep span{margin:0;font-size:24px}.feedbackStep b{font-size:20px}.participantQuote blockquote{font-size:34px}.methodContribution{margin-top:18px!important}}
+</style>
 </head>
 <body>
 <div class="shell">
@@ -90,7 +93,7 @@
 <a class="active" href="research.html">Research</a>
 <a href="design.html">Design</a>
 <a href="experience-prototype.html">Experience</a>
-<a href="impact.html">Impact</a>
+<a href="impact.html">Evaluation</a>
 </nav>
 <header class="hero">
 <div class="reveal">
@@ -155,7 +158,8 @@
 <article class="method reveal">
 <div class="methodNum">01</div>
 <h3>Expert Interview</h3>
-<p>Clarified how short-video platforms sustain engagement, blend persuasive content into everyday feeds, and make algorithmic influence difficult to see.</p>
+<p>Gavin Halm, Lecturer in UC San Diego Communication.</p>
+<p class="methodContribution">Contributed a media-studies view on black-box systems, persuasive content, and why awareness does not always become critical understanding.</p>
 <div class="tags">
 <span class="tag">Media influence</span>
 <span class="tag">Black-box systems</span>
@@ -165,7 +169,15 @@
 <article class="method reveal">
 <div class="methodNum">02</div>
 <h3>Student Interviews</h3>
-<p>Surfaced how students describe scrolling habits, personalization, repeated product exposure, and impulse purchases.</p>
+<p>10 college students, ages 18–25.</p>
+<p>Semi-structured interviews exploring:</p>
+<ul class="methodList">
+<li>Short-video habits</li>
+<li>Recommendation awareness</li>
+<li>Online purchasing behavior</li>
+<li>Perceptions of personalized feeds</li>
+</ul>
+<p class="methodContribution">Interview notes were grouped into recurring patterns rather than treated as statistical evidence. They contributed learner needs, pain points, and persona details.</p>
 <div class="tags">
 <span class="tag">Scrolling habits</span>
 <span class="tag">Personalization</span>
@@ -175,7 +187,8 @@
 <article class="method reveal">
 <div class="methodNum">03</div>
 <h3>Secondary Research</h3>
-<p>Grounded the project in algorithm awareness, persuasive content, digital literacy, and learning design.</p>
+<p>Reviewed research areas and learning-design frameworks connected to digital behavior and reflection.</p>
+<p class="methodContribution">Contributed the link between algorithm awareness, persuasive content, consumer behavior, and reflection-based learning.</p>
 <div class="tags">
 <span class="tag">Digital literacy</span>
 <span class="tag">Influencer content</span>
@@ -192,32 +205,26 @@
 <article>
 <small>Expert interview</small>
 <h4>Gavin Halm</h4>
-<p>Lecturer in the UC San Diego Department of Communication. His feedback helped frame the project through media, communication, and digital-platform studies.</p>
-<p class="evidenceNote">Key takeaway: awareness of algorithms does not always translate into critical understanding of how persuasive content enters the feed.</p>
+<p class="sourceMeta">UC San Diego Department of Communication</p>
+<span class="whyTitle">Why it mattered</span>
+<p class="evidenceNote">Framed the feed as a media system where persuasive content can feel natural.</p>
 <div class="evidenceLinks">
 <a href="https://communication.ucsd.edu/people/lecturers/halm-gavin.html" target="_blank" rel="noreferrer">UCSD profile</a>
 </div>
 </article>
 <article>
 <small>Student interviews</small>
-<h4>Frequent short-video users</h4>
-<p>Student interviews were used as learner research to understand scrolling habits, algorithm awareness, repeated product exposure, and impulse-purchase moments.</p>
-<p class="evidenceNote">Interview notes were grouped into patterns and translated into learner needs, persona details, and design implications.</p>
+<h4>Student Interviews</h4>
+<p class="sourceMeta">10 college students, ages 18–25</p>
+<span class="whyTitle">Why it mattered</span>
+<p class="evidenceNote">Revealed how students describe personalized feeds, repeated exposure, and purchase moments.</p>
 </article>
 <article>
 <small>Secondary research</small>
-<h4>Research areas and frameworks reviewed</h4>
-<p>The synthesis drew from recommendation systems, algorithm awareness, digital media literacy, influencer marketing, persuasive content, consumer behavior, and impulse buying.</p>
-<p class="evidenceNote">Learning-design decisions were informed by Bloom, Fink, Kolb, Mayer, Bates, Plass et al., and Dirksen.</p>
-<div class="referenceTags">
-<span>Bloom</span>
-<span>Fink</span>
-<span>Kolb</span>
-<span>Mayer</span>
-<span>Bates</span>
-<span>Plass et al.</span>
-<span>Dirksen</span>
-</div>
+<h4>Secondary Research</h4>
+<p class="sourceMeta">Bloom, Fink, Kolb, Mayer, Bates, Plass et al., Dirksen</p>
+<span class="whyTitle">Why it mattered</span>
+<p class="evidenceNote">Connected algorithm awareness with reflection, media literacy, and learning evaluation.</p>
 </article>
 </div>
 </div>
@@ -234,42 +241,77 @@
 <article class="finding reveal">
 <div class="findingNum">01</div>
 <div>
+<small class="findingLabel">Finding</small>
 <h3>Users know algorithms exist, but not how they train the feed.</h3>
-<p>Students often describe the feed as something that simply “knows what they like,” rather than as a system shaped by their own actions.</p>
+<div class="support">
+<small class="findingLabel">Supporting evidence</small>
+<p>Interviews and expert feedback pointed to a gap between general awareness and critical understanding.</p>
+</div>
 </div>
 <div class="why">
-<small>Why it matters</small>
-<p>The design needed to connect everyday actions to recommendation patterns.</p>
+<small>Design implication</small>
+<p>Let users interact first, then reveal the behavior-to-feed connection.</p>
 </div>
 </article>
 <article class="finding reveal">
 <div class="findingNum">02</div>
 <div>
+<small class="findingLabel">Finding</small>
 <h3>Repeated exposure makes consumer content feel natural.</h3>
-<p>Product videos blend into lifestyle content, trends, routines, and casual recommendations, so users may not recognize them as persuasive.</p>
+<div class="support">
+<small class="findingLabel">Supporting evidence</small>
+<p>Product and creator content often appears as lifestyle, trend, or recommendation content rather than as a clear sales pitch.</p>
+</div>
 </div>
 <div class="why">
-<small>Why it matters</small>
-<p>The experience needed to show how persuasion develops gradually through repetition.</p>
+<small>Design implication</small>
+<p>Show influence as gradual category shifts, not a single obvious ad.</p>
 </div>
 </article>
 <article class="finding reveal">
 <div class="findingNum">03</div>
 <div>
-<h3>Users experience personalization as personal preference.</h3>
-<p>Students often interpret repeated content as a reflection of their own taste, which can hide the role of algorithmic reinforcement.</p>
+<small class="findingLabel">Finding</small>
+<h3>Personalization can feel like preference.</h3>
+<div class="support">
+<small class="findingLabel">Supporting evidence</small>
+<p>Students described feeds as personal, even when repeated exposure may have shaped what felt appealing.</p>
+</div>
 </div>
 <div class="why">
-<small>Why it matters</small>
-<p>The prototype needed to make the feedback loop between action and system response visible.</p>
+<small>Design implication</small>
+<p>Compare stated intention with observed behavior after the session.</p>
 </div>
 </article>
+</div>
+<figure class="participantQuote reveal">
+<blockquote>I know the feed is personalized, but I do not really think about how each interaction might be teaching it what to show me next.</blockquote>
+<figcaption>Student reflection theme</figcaption>
+</figure>
+</section>
+<section class="section">
+<div class="sectionHead reveal">
+<div>
+<div class="eyebrow">04 · Feedback loop</div>
+<h2>How the feedback loop becomes invisible.</h2>
+</div>
+<p>The research logic is a continuous sequence, not a single moment of influence.</p>
+</div>
+<div class="feedbackLoop reveal">
+<div class="feedbackTrack" aria-label="Five-step feedback loop">
+<div class="feedbackStep"><span>01</span><b>A user pauses or likes</b></div>
+<div class="feedbackStep"><span>02</span><b>The system reads it as a signal</b></div>
+<div class="feedbackStep"><span>03</span><b>Similar content appears more often</b></div>
+<div class="feedbackStep"><span>04</span><b>Repeated exposure feels familiar</b></div>
+<div class="feedbackStep"><span>05</span><b>Familiarity begins to feel like preference</b></div>
+</div>
+<p class="loopExplanation">The influence does not happen through a single post. It accumulates through repeated interactions and repeated exposure.</p>
 </div>
 </section>
 <section class="section">
 <div class="sectionHead reveal">
 <div>
-<div class="eyebrow">04 · Design implications</div>
+<div class="eyebrow">05 · Design implications</div>
 <h2>From Research to Design</h2>
 </div>
 <p>Each finding was translated into a prototype decision.</p>
@@ -283,51 +325,40 @@
 <div class="arrow">→</div>
 <div class="bridgeCell">
 <small>Design decision</small>
-<b>Let users interact with content before explaining the algorithm.</b>
+<b>Delay explanation until after users interact.</b>
 </div>
 </div>
 <div class="bridgeRow reveal">
 <div class="bridgeCell">
 <small>Research insight</small>
-<b>Algorithmic influence builds gradually over time.</b>
+<b>Repeated exposure feels natural rather than persuasive.</b>
 </div>
 <div class="arrow">→</div>
 <div class="bridgeCell">
 <small>Design decision</small>
-<b>Show feed changes across multiple rounds instead of one static explanation.</b>
+<b>Let content categories shift gradually.</b>
 </div>
 </div>
 <div class="bridgeRow reveal">
 <div class="bridgeCell">
 <small>Research insight</small>
-<b>Product content often blends into entertainment.</b>
+<b>Personalization feels like an expression of preference.</b>
 </div>
 <div class="arrow">→</div>
 <div class="bridgeCell">
 <small>Design decision</small>
-<b>Use lifestyle, influencer, and trend-based content—not obvious ads only.</b>
+<b>Compare stated intention with observed behavior.</b>
 </div>
 </div>
 <div class="bridgeRow reveal">
 <div class="bridgeCell">
 <small>Research insight</small>
-<b>Users experience personalization as personal preference.</b>
+<b>Abstract explanations are easy to dismiss.</b>
 </div>
 <div class="arrow">→</div>
 <div class="bridgeCell">
 <small>Design decision</small>
-<b>Reveal how their actions shaped the simulated feed.</b>
-</div>
-</div>
-<div class="bridgeRow reveal">
-<div class="bridgeCell">
-<small>Research insight</small>
-<b>Students dislike being lectured about their media habits.</b>
-</div>
-<div class="arrow">→</div>
-<div class="bridgeCell">
-<small>Design decision</small>
-<b>Use simulation and reflection instead of passive explanation.</b>
+<b>Use simulation before explanation.</b>
 </div>
 </div>
 </div>
@@ -335,7 +366,7 @@
 <section class="section">
 <div class="sectionHead reveal">
 <div>
-<div class="eyebrow">05 · Audience</div>
+<div class="eyebrow">06 · Audience</div>
 <h2>Target Learner</h2>
 </div>
 <p>A learner profile synthesized from interview patterns and the project context.</p>
@@ -346,33 +377,24 @@
 <div class="eyebrow">Learner persona</div>
 <h3>Emma, 20</h3>
 <small>College student / Daily short-video user</small>
-<p>Emma uses short-video platforms for entertainment, stress relief, trends, and product discovery. She enjoys content that feels personal, but sometimes buys items after seeing them repeatedly.</p>
-<p>She knows algorithms exist, but does not always understand how likes, skips, saves, and watch time shape what appears next.</p>
-<div class="tags">
-<span class="tag">Entertainment</span>
-<span class="tag">Stress relief</span>
-<span class="tag">Trends</span>
-<span class="tag">Product discovery</span>
-</div>
+<p>A college student who uses short-video platforms daily and occasionally purchases products discovered through creator content.</p>
+<p>She understands that recommendation systems personalize her feed, but rarely connects individual interactions with how that personalization develops.</p>
 </div>
 <div class="personaDetails">
 <div class="detail">
 <h4>Pain Points</h4>
 <ul>
-<li>Notices repeated products but does not know why they keep appearing</li>
-<li>Struggles to separate genuine interest from repetition</li>
-<li>Sometimes regrets purchases influenced by repeated exposure</li>
-<li>Assumes a product is popular because “everyone has it”</li>
+<li>Knows the feed is personalized, but not how individual actions shape it.</li>
+<li>Experiences repeated product exposure as natural discovery.</li>
+<li>Rarely reflects on the difference between intention and behavior.</li>
 </ul>
 </div>
 <div class="detail">
 <h4>Learner Needs</h4>
 <ul>
-<li>Understand how recommendations respond to behavior</li>
-<li>Recognize persuasive consumer content</li>
-<li>Notice repeated exposure patterns</li>
-<li>Reflect on how scrolling shapes preferences</li>
-<li>Build one realistic strategy for intentional consumption</li>
+<li>A concrete way to observe the feedback loop.</li>
+<li>An experience that feels familiar rather than instructional.</li>
+<li>A reflection moment connecting behavior with recommendation outcomes.</li>
 </ul>
 </div>
 </div>
